@@ -31,7 +31,8 @@ The RLF method is well-suited for frequency response analysis and system charact
 - MATLAB R2019b or later
 
 ## 📝 Algorithmic Steps for RLF-Based DRT Extraction from Impedance Data
-
+The script **analyze_your_data_with_RLF.m** provides an efficient and user-friendly pipeline to extract a denoised DRT from your impedance data using the RLF approach. 
+It performs the following main steps:
 ### Step 1: Import Impedance Data
 
 - Load the frequency vector $f$ and complex impedance data $Z(f) = Z\_{real} + i Z\_{imag}$
