@@ -55,54 +55,50 @@ It performs the following main steps:
 - These define the rational approximation:
   $Z_{r\_{opt}}(i\omega) = C_{r\_{opt}} (i\omega E_{r\_{opt}} - A_{r\_{opt}})^{-1} B_{r\_{opt}}$
 
+### Step 5: Extract Discrete DRT (Unfiltered)
 
-### Step 5: Compute Preliminary DRT (Unfiltered)
+- Use `DRT_values.m` to compute relaxation times ($\tau_i$) and corresponding resistances ($R_i$) by performing eigenvalue decomposition (EVD) of $-A_{r_{\text{opt}}}^{-1} E_{r_{\text{opt}}}$
+- Plotting $|R_i|$ vs. $\log_{10}(\tau_i)$ yields the discrete DRT
 
-- Use `DRT_values.m` to extract:
-  - Relaxation times:  
-    \[
-    \tau_i = \frac{1}{\mathrm{Re}(\lambda_i)}
-    \]  
-    where \(\lambda_i\) are eigenvalues of \(E_r^{-1} A_r\)
-  - Resistances \(R_i\) from eigen-decomposition
-  - DRT set:  
-    \[
-    \{(\tau_i, R_i)\}_{i=1}^r
-    \]
+### Step 6: AIC-Based Filtering
 
-### Step 6: AIC-Based Model Filtering
+- Use `AIC_calculation.m` to identify and retain only the most essential DRT components.
+- For each model order ( $r \le r_{\text{opt}}$), calculate the corrected Akaike Information Criterion (AICc) as:
 
-- Use `AIC_calculation.m` to refine the DRT:
-  - For each model order \(k \leq r\), compute:  
-    \[
-    \mathrm{AIC}(k) = n \cdot \log\left(\frac{\mathrm{RSS}_k}{n}\right) + 2k
-    \]  
-    where RSS is residual sum of squares, and \(n\) is number of frequency points
-  - Select model order \(k^*\) minimizing AIC
-  - Retain only top \(k^*\) DRT elements → denoised DRT
+$${AICc(r) = N\cdot\log\left(\frac{{RSS}_r}{N}\right) + \frac{2r(r+1)}{N - r - 1} + 2r}$$
+  
+  where:  
+  - $r$ is the number of parameters,  
+  - $N$ is the number of observations (frequency points),  
+  - $RSS_r$ is the residual sum of squares for model order ($r$ ).
+
+- Select the refined optimal order ($r_{\text{opt}}^*$) corresponding to the minimum AICc value or the largest drop between successive AICc values.
+- Retain the top ($r_{\text{opt}}^*$) components to obtain the denoised DRT.
 
 ### Step 7: Reconstruct Impedance from Denoised DRT
 
-- Approximate impedance using:  
-  \[
-  Z_{\text{DRT}}(s) = R_{\infty} + \sum_{i=1}^{k^*} \frac{R_i}{1 + s \tau_i}
-  \]
-- (Optional) Estimate \(R_{\infty}\) from high-frequency asymptote
+- Approximate the impedance as:
+
+$$Z_{\text{DRT}}(i\omega) = \sum_{i=1}^{r_{\text{opt}}^*} \frac{R_i}{1 + i\omega \tau_i}$$
+
+- Alternatively, explicitly separate the ohmic resistance ($R_0$):
+  
+$$Z_{\text{DRT}}(i\omega) = R_0 + \sum_{i=1}^{r_{\text{opt}}^*-1} \frac{R_i}{1 + i\omega \tau_i}$$
 
 ### Step 8: Compute Relative Residual
 
-- Evaluate reconstruction accuracy:  
-  \[
-  \text{Relative Residual} = \frac{\| Z_{\text{exp}} - Z_{\text{DRT}} \|_2}{\| Z_{\text{exp}} \|_2}
-  \]
-- Quantifies fidelity of extracted model to original data
+- Assess the reconstruction accuracy via:
 
-### Step 9: Visualization and Analysis
+$$\text{Relative Residual} = \frac{{|| Z_{exp} - Z_{DRT} ||}_2}{{|| Z_exp ||}_2} $$
 
-- Plot:
-  - Nyquist and Bode plots: compare original \(Z(f)\) and reconstructed \(Z_{\text{DRT}}(f)\)
-  - DRT plot: \(|R_i|\) vs. \(\log_{10}(\tau_i)\)
+### Step 9: Visualization and Interpretation
 
+- Generate key diagnostic plots for thorough analysis:
+  - **Nyquist plot**: compare measured impedance **$Z(f)$** with reconstructed impedance **$Z_{\text{DRT}}(f)$**.
+  - **DRT plot**: Visualize the denoised discrete distribution of relaxation times (**$|\mathbf{R_i}|$** vs. **$\log_{10}(\mathbf{\tau_i})$**).
+  - **Relative residuals**: Quantify the discrepancy between measured and reconstructed impedance.
+  - **Singular value decay**: Examine the decay of singular values from the Loewner pencil.
+  - **AICc trends**: Visually assess the corrected AIC values to verify the optimal model order selection.
 
 ## 📄 Citation
 
