@@ -45,7 +45,7 @@ It performs the following main steps:
 
 ### Step 3: Estimate Optimal Model Order for SVD Truncation
 
-- Use `ScreeNOT.m` to determine optimal SVD truncation order $r\_{opt}$
+- Use `ScreeNOT.m` (see [Acknowledgements](#acknowledgements) for source) to determine optimal SVD truncation order $r\_{opt}$
   - Eliminates the need for manual thresholding
   - Enhances robustness to noise
 
@@ -133,6 +133,11 @@ If you use this repository or build upon this work, please also consider citing:
    *Master’s Thesis*, Otto-von-Guericke-Universität Magdeburg, 2021.  
    [https://doi.org/10.25673/101328](https://doi.org/10.25673/101328)
 
+## 🙏 Acknowledgements
+
+The `ScreeNOT.m` script included in this repository is adapted from the MATLAB implementation available at [https://github.com/eladromanov/ScreeNOT](https://github.com/eladromanov/ScreeNOT). This implementation is based on the work by Donoho, D., Gavish, M., and Romanov, E. (2023), *"ScreeNOT: Exact MSE-optimal singular value thresholding in correlated noise,"* published in *The Annals of Statistics*, **51**(1), 122–148. We gratefully acknowledge the authors for making their method and code publicly available.
+
+---
 If you have questions, feedback, or need assistance, feel free to contact:  
 📧 **patel@mpi-magdeburg.mpg.de**
 
