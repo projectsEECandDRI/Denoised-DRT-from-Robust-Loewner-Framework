@@ -32,11 +32,11 @@ The RLF method is well-suited for frequency response analysis and system charact
 
 ## 📄 Citation
 
-This work is part of the following paper:
+This repository is associated with the following research article:
 
 **Bansidhar Patel, Antonio Sorrentino, Ion Victor Gosea, Athanasios C. Antoulas, Tanja Vidaković-Koch**  
-*A Robust Loewner Framework for Extracting the Distribution of Relaxation Times from Electrochemical Impedance Spectra*  
-**Journal of Power Sources**, 2025.
+**A Data-driven, Noise-resilient Algorithm for Extraction of Distribution of Relaxation Times Using the Loewner Framework**  
+**Journal of Power Sources, 2025.**
 
 ## 📚 Related Publications
 
@@ -52,12 +52,16 @@ If you use this repository or build upon this work, please also consider citing:
    *Journal of Power Sources*, Vol. 585, 2023, 233575.  
    [https://doi.org/10.1016/j.jpowsour.2023.233575](https://doi.org/10.1016/j.jpowsour.2023.233575)
 
-3. **Antonio Sorrentino, Bansidhar Patel, Ion Victor Gosea, Athanasios Antoulas, and Tanja Vidaković-Koch**,  
+3. **Antonio Sorrentino, Ion Victor Gosea, Bansidhar Patel, Athanasios Antoulas, and Tanja Vidaković-Koch**,  
    *Loewner framework and distribution of relaxation times of electrochemical systems: Solving issues through a data-driven modeling approach*,  
    SSRN, 2022.  
    [https://ssrn.com/abstract=4217752](https://ssrn.com/abstract=4217752)  
    [http://dx.doi.org/10.2139/ssrn.4217752](http://dx.doi.org/10.2139/ssrn.4217752)
-
+   
+4. **Bansidhar Patel**,  
+   *Application of Loewner framework for data-driven modeling and diagnosis of polymer electrolyte membrane fuel cells*,  
+   *Master’s Thesis*, Otto-von-Guericke-Universität Magdeburg, 2021.  
+   [https://doi.org/10.25673/101328](https://doi.org/10.25673/101328)
 
 If you have questions, feedback, or need assistance, feel free to contact:  
 📧 **patel@mpi-magdeburg.mpg.de**
