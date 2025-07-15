@@ -5,7 +5,7 @@ This repository provides MATLAB scripts and a graphical user interface (GUI) ***
 This repository **supports and accompanies the research work presented in the paper:**  
 **“A Data-driven, Noise-resilient Algorithm for Extraction of Distribution of Relaxation Times Using the Loewner Framework,”**  
 *Bansidhar Patel, Antonio Sorrentino, Ion Victor Gosea, Athanasios C. Antoulas, and Tanja Vidaković-Koch,*  
-*Journal of Power Sources, vol. 585, Art. no. 237909, 2025.*  
+*Journal of Power Sources, vol. xxx, Art. no. 237909, 2025.*  
 [https://doi.org/10.1016/j.jpowsour.2025.237909](https://doi.org/10.1016/j.jpowsour.2025.237909)
 
 ---
