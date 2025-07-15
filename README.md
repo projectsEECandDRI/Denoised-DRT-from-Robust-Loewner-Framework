@@ -1,12 +1,24 @@
 # Denoised-DRT-from-Robust-Loewner-Framework
 
-This repository provides MATLAB scripts and a graphical user interface (GUI) for extracting denoised distribution of relaxation times (DRT) from noisy electrochemical impedance spectroscopy (EIS) data using a data-driven approach called the Robust Loewner Framework (RLF).
+This repository provides MATLAB scripts and a graphical user interface (GUI) ***(to be released soon)*** for extracting denoised distribution of relaxation times (DRT) from noisy electrochemical impedance spectroscopy (EIS) data using a data-driven approach called the Robust Loewner Framework (RLF).
+
+This repository **supports and accompanies the research work presented in the paper:**  
+**“A Data-driven, Noise-resilient Algorithm for Extraction of Distribution of Relaxation Times Using the Loewner Framework,”**  
+*Bansidhar Patel, Antonio Sorrentino, Ion Victor Gosea, Athanasios C. Antoulas, and Tanja Vidaković-Koch,*  
+*Journal of Power Sources, vol. 585, Art. no. 237909, 2025.*  
+[https://doi.org/10.1016/j.jpowsour.2025.237909](https://doi.org/10.1016/j.jpowsour.2025.237909)
+
+---
+
+## Overview
 
 The RLF algorithm builds upon the direct interpolation capabilities of the Loewner Framework (LF) while addressing its sensitivity to noise by incorporating:
 * **ScreeNOT**: A robust method for selecting the optimal SVD truncation threshold that determines the optimal model order for the reduced Loewner model.
 * **Akaike Information Criterion (AIC)-based filtering**: A post-processing step that refines the optimal model order, yielding a physically meaningful, so-called denoised DRT.
 
 The RLF method is well-suited for frequency response analysis and system characterization, both within electrochemical impedance spectroscopy (EIS) and beyond.
+
+---
 
 ## 🔑 Key Features
 
@@ -15,20 +27,27 @@ The RLF method is well-suited for frequency response analysis and system charact
 - 🙌 User-independent and parameter-free 
 - 🔧 Versatile and easy to apply  
 
+---
+
 ## 📁 Repository Contents
 
-- Sample scripts to run the RLF algorithm on:
-  - Noisy synthetic data from various Equivalent Circuit Models (ECMs)
+- **Sample MATLAB scripts** for applying the RLF algorithm on:
+  - Noisy synthetic data from various Equivalent Circuit Models (ECMs) discussed in the paper
   - Experimental data presented in the paper
-- A user-friendly MATLAB GUI for interactive DRT extraction
-- User manual with instructions for using the GUI
-- Example datasets from:
+- A user-friendly **MATLAB GUI** for interactive DRT extraction ***(to be released soon)***
+- **User manual** with instructions for using the GUI ***(to be released soon)***
+- **Example datasets** including:
+  - Sample synthetic noisy EIS data from various ECMs discussed in the paper
   - Ferrocyanide oxidation experiments
   - PEM water electrolysis experiments
+
+---
 
 ## 🛠️ Requirements
 
 - MATLAB R2019b or later
+
+---
 
 ## 📝 Algorithmic Steps for RLF-Based DRT Extraction from Impedance Data
 The script **analyze_your_data_with_RLF.m** provides an efficient and user-friendly pipeline to extract a denoised DRT from your impedance data using the RLF approach. 
@@ -100,13 +119,18 @@ $$\text{Relative Residual} = \frac{{|| Z_{exp} - Z_{DRT} ||}_2}{{|| Z_exp ||}_2}
   - **Singular value decay**: Examine the decay of singular values from the Loewner pencil.
   - **AICc trends**: Visually assess the corrected AIC values to verify the optimal model order selection.
 
+---
+
 ## 📄 Citation
 
-This repository is associated with the following research article:
+If you use this repository, please cite the following article:
 
 **Bansidhar Patel, Antonio Sorrentino, Ion Victor Gosea, Athanasios C. Antoulas, Tanja Vidaković-Koch**  
-**A Data-driven, Noise-resilient Algorithm for Extraction of Distribution of Relaxation Times Using the Loewner Framework**  
-**Journal of Power Sources, 2025.**
+*A Data-driven, Noise-resilient Algorithm for Extraction of Distribution of Relaxation Times Using the Loewner Framework,*  
+**Journal of Power Sources, 2025.**  
+[https://doi.org/10.1016/j.jpowsour.2025.237909](https://doi.org/10.1016/j.jpowsour.2025.237909)
+
+---
 
 ## 📚 Related Publications
 
@@ -133,12 +157,17 @@ If you use this repository or build upon this work, please also consider citing:
    *Master’s Thesis*, Otto-von-Guericke-Universität Magdeburg, 2021.  
    [https://doi.org/10.25673/101328](https://doi.org/10.25673/101328)
 
+---
+
 ## 🙏 Acknowledgements
 
 The `ScreeNOT.m` script included in this repository is adapted from the MATLAB implementation available at [https://github.com/eladromanov/ScreeNOT](https://github.com/eladromanov/ScreeNOT). This implementation is based on the work by Donoho, D., Gavish, M., and Romanov, E. (2023), *"ScreeNOT: Exact MSE-optimal singular value thresholding in correlated noise,"* published in *The Annals of Statistics*, **51**(1), 122–148. We gratefully acknowledge the authors for making their method and code publicly available.
 
 ---
-If you have questions, feedback, or need assistance, feel free to contact:  
-📧 **patel@mpi-magdeburg.mpg.de**
 
-In case you encounter any bugs or issues related to the GUI, please report them via email or open an issue on this repository.
+## 📬 Contact
+
+For questions, feedback, or support, please contact:  
+**Bansidhar Patel** — 📧 [patel@mpi-magdeburg.mpg.de](mailto:patel@mpi-magdeburg.mpg.de)
+
+If you encounter bugs or issues with the GUI, please report them by email or open an issue in this repository.
