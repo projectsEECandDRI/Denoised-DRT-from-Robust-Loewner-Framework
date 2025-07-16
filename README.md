@@ -38,8 +38,8 @@ The RLF method is well-suited for frequency response analysis and system charact
 - **User manual** with instructions for using the GUI ***(to be released soon)***
 - **Example datasets** including:
   - Sample synthetic noisy EIS data from various ECMs discussed in the paper
-  - Ferrocyanide oxidation experiments
-  - PEM water electrolysis experiments
+  - Ferrocyanide oxidation experimental data from *(Patel, B. et al., 2025, [DOI](https://doi.org/10.17617/3.MMLZAK), Edmond V2)*  
+  - PEM water electrolysis experimental data from *(Milicic, T. et al., 2024, [DOI](https://doi.org/10.17617/3.I0ECY9), Edmond V1)*
 
 ---
 
