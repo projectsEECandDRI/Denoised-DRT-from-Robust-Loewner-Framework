@@ -2,7 +2,7 @@
 
 This repository provides MATLAB scripts and a graphical user interface (GUI) ***(to be released soon)*** for extracting denoised distribution of relaxation times (DRT) from noisy electrochemical impedance spectroscopy (EIS) data using a data-driven approach called the Robust Loewner Framework (RLF).
 
-This repository **supports and accompanies the research work presented in the paper:**  
+This repository supports and accompanies the research work presented in the paper: 
 **“A Data-driven, Noise-resilient Algorithm for Extraction of Distribution of Relaxation Times Using the Loewner Framework,”**  
 *Bansidhar Patel, Antonio Sorrentino, Ion Victor Gosea, Athanasios C. Antoulas, and Tanja Vidaković-Koch,*  
 *Journal of Power Sources, vol. xxx, Art. no. 237909, 2025.*  
@@ -10,7 +10,7 @@ This repository **supports and accompanies the research work presented in the pa
 
 ---
 
-## Overview
+## 🚀Overview
 
 The RLF algorithm builds upon the direct interpolation capabilities of the Loewner Framework (LF) while addressing its sensitivity to noise by incorporating:
 * **ScreeNOT**: A robust method for selecting the optimal SVD truncation threshold that determines the optimal model order for the reduced Loewner model.
