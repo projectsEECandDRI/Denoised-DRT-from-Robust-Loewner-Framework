@@ -81,13 +81,13 @@ It performs the following main steps:
 
 ### Step 6: AIC-Based Filtering
 
-- Use `AIC_calculation.m` to identify and retain only the most essential DRT components.
+- Use `AIC_calculation.m` to identify and retain only the most essential DRT components (referred to as the Denoised DRT).
 - For each model order ( $r \le r_{\text{opt}}$), calculate the corrected Akaike Information Criterion (AICc) as:
 
 $${AICc(r) = N\cdot\log\left(\frac{{RSS}_r}{N}\right) + \frac{2r(r+1)}{N - r - 1} + 2r}$$
   
   where:  
-  - $r$ is the number of parameters,  
+  - $r$ is the number of parameters (i.e., the model order),  
   - $N$ is the number of observations (frequency points),  
   - $RSS_r$ is the residual sum of squares for model order ($r$ ).
 
@@ -108,16 +108,16 @@ $$Z_{\text{DRT}}(i\omega) = R_0 + \sum_{i=1}^{r_{\text{opt}}^*-1} \frac{R_i}{1 +
 
 - Assess the reconstruction accuracy via:
 
-$$\text{Relative Residual} = \frac{{|| Z_{exp} - Z_{DRT} ||}_2}{{|| Z_exp ||}_2} $$
+$$\text{Relative Residual} = \frac{{|| Z - Z_{DRT} ||}_2}{{|| Z ||}_2} $$
 
 ### Step 9: Visualization and Interpretation
 
 - Generate key diagnostic plots for thorough analysis:
   - **Nyquist plot**: compare measured impedance **$Z(f)$** with reconstructed impedance **$Z_{\text{DRT}}(f)$**.
-  - **DRT plot**: Visualize the denoised discrete distribution of relaxation times (**$|\mathbf{R_i}|$** vs. **$\log_{10}(\mathbf{\tau_i})$**).
+  - **DRT plot**: Visualize the denoised discrete DRT (**$|\mathbf{R_i}|$** vs. **$\log_{10}(\mathbf{\tau_i})$**).
   - **Relative residuals**: Quantify the discrepancy between measured and reconstructed impedance.
   - **Singular value decay**: Examine the decay of singular values from the Loewner pencil.
-  - **AICc trends**: Visually assess the corrected AIC values to verify the optimal model order selection.
+  - **AICc trends**: Visually inspect the corrected AIC values to confirm the selection of the refined optimal model order ($r_{\text{opt}}^*$).
 
 ---
 
@@ -127,7 +127,7 @@ If you use this repository, please cite the following article:
 
 **Bansidhar Patel, Antonio Sorrentino, Ion Victor Gosea, Athanasios C. Antoulas, Tanja Vidaković-Koch**  
 *A Data-driven, Noise-resilient Algorithm for Extraction of Distribution of Relaxation Times Using the Loewner Framework,*  
-**Journal of Power Sources, 2025.**  
+*Journal of Power Sources, vol. xxx, Art. no. 237909, 2025.*  
 [https://doi.org/10.1016/j.jpowsour.2025.237909](https://doi.org/10.1016/j.jpowsour.2025.237909)
 
 ---
