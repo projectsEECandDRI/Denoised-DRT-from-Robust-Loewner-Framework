@@ -122,7 +122,7 @@ $$\text{Relative Residual} = \frac{{|| Z - Z_{DRT} ||}_2}{{|| Z ||}_2} $$
 
 - Generate key diagnostic plots for thorough analysis:
   - **Nyquist plot**: compare measured impedance **$Z(f)$** with reconstructed impedance **$Z_{\text{DRT}}(f)$**.
-  - **DRT plot**: Visualize the denoised discrete DRT (**$|\mathbf{R_i}|$** vs. **$\log_{10}(\mathbf{\tau_i})$**).
+  - **DRT plot**: Visualize the denoised discrete DRT (**$|R_i|$** vs. **$\log_{10}(\tau_i)$**).
   - **Relative residuals**: Quantify the discrepancy between measured and reconstructed impedance.
   - **Singular value decay**: Examine the decay of singular values from the Loewner pencil.
   - **AICc trends**: Visually inspect the corrected AIC values to confirm the selection of the refined optimal model order ($r_{\text{opt}}^*$).
