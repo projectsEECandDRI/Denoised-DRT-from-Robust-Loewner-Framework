@@ -86,13 +86,17 @@ It performs the following main steps:
 
 $${AICc(r) = N\cdot\log\left(\frac{{RSS}_r}{N}\right) + \frac{2r(r+1)}{N - r - 1} + 2r}$$
   
-  where:  
+- where:   
   - $r$ is the number of parameters (i.e., the model order),  
   - $N$ is the number of observations (frequency points),  
   - $RSS_r$ is the residual sum of squares for model order ($r$ ).
 
-- Select the refined optimal order ($r_{\text{opt}}^*$) corresponding to the minimum AICc value or the largest drop between successive AICc values.
-- Retain the top ($r_{\text{opt}}^*$) components to obtain the denoised DRT.
+- Determine the refined optimal model order ($r_{\text{opt}}^*$) by either:
+  - selecting the model with the lowest AICc value, or  
+  - identifying the largest drop in AICc between successive model orders.
+
+- Retain the top $r_{\text{opt}}^*$ components to obtain the denoised DRT.
+
 
 ### Step 7: Reconstruct Impedance from Denoised DRT
 
