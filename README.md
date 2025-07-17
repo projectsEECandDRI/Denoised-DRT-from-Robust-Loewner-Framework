@@ -81,8 +81,12 @@ It performs the following main steps:
 
 ### Step 6: AIC-Based Filtering
 
-- Use `AIC_calculation.m` to identify and retain only the most essential DRT components (referred to as the Denoised DRT).
-- For each model order ( $r \le r_{\text{opt}}$), calculate the corrected Akaike Information Criterion (AICc) as:
+- First, sort the DRT components ($R_i$ and their corresponding $\tau_i$) in descending order based on the 2-norm of their residues. This step prioritizes poles ($-1/\tau_i$) that contribute most significantly to the system response, as indicated by larger residue norms:
+
+  $${||Res_i||}_2 = {||\frac{R_i}{\tau_i}||}_2$$
+
+- Next, apply the corrected Akaike Information Criterion (AICc) using the script `AIC_calculation.m` to identify and retain only the most essential DRT components (referred to as the Denoised DRT).
+- For each model order ( $r \le r_{\text{opt}}$), compute the corrected AIC as:
 
 $${AICc(r) = N\cdot\log\left(\frac{{RSS}_r}{N}\right) + \frac{2r(r+1)}{N - r - 1} + 2r}$$
   
